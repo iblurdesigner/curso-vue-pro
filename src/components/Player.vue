@@ -1,6 +1,6 @@
 <template lang="pug">
   .content(v-if="track && track.album")
-    p
+    p.is-128x128
       img(
         :src="track.album.images[0].url"
       )
@@ -12,24 +12,25 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        track: {}
-      }
-    },
+export default {
 
-    created () {
-      this.$bus.$on('set-track', (track) => {
-        this.track = track
-      })
+  data () {
+    return {
+      track: {}
     }
+  },
+
+  created () {
+    this.$bus.$on('set-track', (track) => {
+      this.track = track
+    })
   }
+}
 </script>
 
 <style lang="scss" scoped>
   img {
     width: 124px;
-    border-radius: 50%
+    border-radius: 50%;
   }
 </style>

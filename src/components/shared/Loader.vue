@@ -1,6 +1,6 @@
 <template lang="pug">
   .container
-    .contend.has-text-centered
+    .content.has-text-centered
       h1 Cargando ...
 </template>
 

@@ -3,11 +3,13 @@ var webpack = require('webpack')
 
 module.exports = {
   entry: './src/main.js',
+
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'build.js'
   },
+
   module: {
     rules: [
       {
@@ -17,45 +19,13 @@ module.exports = {
         include: [path.resolve(__dirname, './src')]
       },
       {
-        test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
-      },
-      {
-        test: /\.sass$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader?indentedSyntax'
-        ],
-      },
-      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
           loaders: {
-            'scss': [
-              'vue-style-loader',
-              'css-loader',
-              'sass-loader'
-            ],
-            'sass': [
-              'vue-style-loader',
-              'css-loader',
-              'sass-loader?indentedSyntax'
-            ]
+            'scss': 'vue-style-loader!css-loader!sass-loader',
+            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
           }
-          // other vue-loader options go here
         }
       },
       {
@@ -76,13 +46,11 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': path.resolve(__dirname, './src')
-    },
-    extensions: ['*', '.js', '.vue', '.json']
+    }
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: false,
-    overlay: true
+    noInfo: false
   },
   performance: {
     hints: false

@@ -8,24 +8,16 @@
 </template>
 
 <script>
-  import PmFooter from '@/components/layout/Footer.vue'
-  import PmHeader from '@/components/layout/Header.vue'
+import PmFooter from '@/components/layout/Footer.vue'
+import PmHeader from '@/components/layout/Header.vue'
 
-  export default {
-    name: 'app',
+export default {
+  name: 'app',
 
-    components: { PmFooter, PmHeader }
-  }
+  components: { PmFooter, PmHeader }
+}
 </script>
 
 <style lang="scss">
   @import './scss/main.scss';
-
-  .results {
-    margin-top: 50px
-  }
-
-  .is-active {
-    border: 3px #3bd169 solid;
-  }
 </style>
