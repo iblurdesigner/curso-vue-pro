@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "bulma": "^0.4.3",
+    "tar": ">=2.2.2",
     "trae": "^1.4.2",
     "vue": "^2.3.3",
     "vue-i18n": "^7.4.2",
@@ -37,6 +38,7 @@
     "pug": "^2.0.0-rc.2",
     "pug-loader": "^2.3.0",
     "sass-loader": "^5.0.1",
+    "tar": ">=2.2.2",
     "vue-loader": "^12.1.0",
     "vue-template-compiler": "^2.3.3",
     "webpack": "^2.6.1",
